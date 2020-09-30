@@ -1,0 +1,62 @@
+.front-page {
+  width: 320px;
+  background: var(--c-dark);
+  padding: 30px 10px 55px 10px;
+  box-sizing: border-box;
+}
+.page-title-name {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 31px;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: var(--txt-c-accent);
+}
+.page-title-professional {
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 42px;
+  /* identical to box height */
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--txt-c-light);
+}
+.page-description {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  /* or 24px */
+
+  text-align: center;
+  color: var(--txt-c-light);
+}
+.hire-my-btn {
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 18px;
+
+  letter-spacing: 0.05em;
+  text-decoration: none;
+
+  color: var(--txt-c-accent);
+}
+.navigation {
+  width: 100%;
+}
+.mobile-menu {
+  width: 30px;
+  height: 30px;
+  background: var(--c-accent);
+  text-decoration: none;
+  display: block;
+}
+.mobile-menu .fas.fa-bars {
+  color: var(--c-light);
+  width: 10px;
+}
+
+// .logo-link {
+// }
