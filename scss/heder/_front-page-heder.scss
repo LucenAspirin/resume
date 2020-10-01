@@ -1,4 +1,22 @@
+// переиспользование стилей
+.accent-btn {
+  padding: 20px 35px;
+  background-color: var(--c-accent);
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c-light);
+  outline: none;
+  border: none;
+}
+
 .front-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 320px;
   background: var(--c-dark);
   padding: 30px 10px 55px 10px;
@@ -11,6 +29,7 @@
   line-height: 31px;
   text-transform: uppercase;
   text-align: center;
+  margin: 37px 0 0 0;
 
   color: var(--txt-c-accent);
 }
@@ -22,8 +41,12 @@
   text-align: center;
   text-transform: uppercase;
   color: var(--txt-c-light);
+  padding-top: 13px;
+  margin: 0;
 }
 .page-description {
+  margin: 0;
+  padding-top: 22px;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -37,6 +60,7 @@
   font-weight: 800;
   font-size: 15px;
   line-height: 18px;
+  margin-right: 22px;
 
   letter-spacing: 0.05em;
   text-decoration: none;
@@ -44,19 +68,119 @@
   color: var(--txt-c-accent);
 }
 .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
   width: 100%;
 }
+
 .mobile-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
   width: 30px;
   height: 30px;
   background: var(--c-accent);
-  text-decoration: none;
-  display: block;
 }
-.mobile-menu .fas.fa-bars {
+.fa-bars {
   color: var(--c-light);
   width: 10px;
 }
+.navigation-part {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-gallery-btn {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.page-my-photo {
+  margin-bottom: 20px;
+  width: 100px;
+}
+.page-my-description-btn {
+  margin: 0px 0px 17px 0px;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 140%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c-light);
+}
+.page-my-video-btn {
+  margin-bottom: 35px;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--c-accent);
+  box-sizing: border-box;
+  background: transparent;
+  padding: 10px 40px;
 
-// .logo-link {
-// }
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: right;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--c-accent);
+}
+.fa-play {
+  font-size: 9px;
+  margin-right: 7px;
+}
+
+.page-laptop {
+  margin-bottom: 40px;
+  width: 250px;
+}
+
+// экпиренс
+
+.experience-title {
+  margin: 0;
+  padding-bottom: 30px;
+  width: 240px;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 140%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--c-light);
+}
+.experience-skill {
+  width: 174px;
+  display: flex;
+
+  align-items: center;
+  margin-bottom: 20px;
+}
+.experience-dots {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+.experience-dots-item {
+  color: var(--c-grey-blue);
+  font-size: 7px;
+  margin-right: 5px;
+}
+.experience-text {
+  color: var(--c-light);
+  margin: 0;
+}
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.experience-dots-accent {
+  color: var(--c-accent);
+}
