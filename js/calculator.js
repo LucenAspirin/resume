@@ -1,5 +1,5 @@
 const technologiesSelect = document.querySelector(
-  '#calculator-form-technologies',
+  "#calculator-form-technologies"
 );
 
 const technologiesMultiSelect = new Choices(technologiesSelect, {
@@ -11,50 +11,65 @@ const technologiesMultiSelect = new Choices(technologiesSelect, {
   removeItemButton: true,
   editItems: false,
   duplicateItemsAllowed: false,
-  delimiter: ',',
+  delimiter: ",",
   paste: true,
   searchEnabled: false,
   searchChoices: true,
   searchResultLimit: -1,
-  position: 'auto',
+  position: "auto",
   resetScrollPosition: true,
   shouldSort: true,
   shouldSortItems: false,
   placeholder: true,
-  noChoicesText: 'No available options',
-  itemSelectText: 'Click to select',
+  noChoicesText: "No available options",
+  itemSelectText: "Click to select",
   classNames: {
-    containerInner: 'choices__inner tech-input-container',
-    input: 'choices__input',
+    containerInner: "choices__inner tech-input-container",
+    input: "choices__input",
   },
 });
 
-const calculatorForm = document.querySelector('.calculator-form');
-calculatorForm.addEventListener('submit', function (event) {
-  event.preventDefault();
-  // selector
-  const websiteTypeSelect = document.querySelector('#website-type');
+calculateSum();
 
-  const websiteCard = document.querySelector(
-    '#calculator-form-input-cart input:checked',
+const calculatorForm = document.querySelector(".calculator-form");
+
+calculatorForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  calculateSum();
+});
+
+function calculateSum() {
+  // Selectors
+  const websiteTypeSelect = document.querySelector(
+    "#calculator-form-website-type"
+  );
+  const websiteCart = document.querySelector(
+    "#calculator-form-input-cart input:checked"
   );
   const websiteReception = document.querySelector(
-    '#calculator-form-input-reception input:checked',
+    "#calculator-form-input-reception input:checked"
   );
-  // values
 
+  // Values
   const websiteTypeValue = extractPriceFromValue(websiteTypeSelect.value);
   const technologiesValue = getTechnologiesSum(
-    technologiesMultiSelect.getValue(),
+    technologiesMultiSelect.getValue()
   );
-  const websiteCardValue = convertCartOptionToPrice(websiteCard.value);
-  const websiteReceptionValue = websiteReception.value;
+  const websiteCartValue = converCartOptionToPrice(websiteCart.value);
+  const websiteReceptionValue = converReceptionOptionToPrice(
+    websiteReception.value
+  );
 
-  console.log(websiteTypeValue);
-  console.log(technologiesValue);
-  console.log(websiteCardValue);
-  console.log(websiteReceptionValue);
-});
+  const totalSum =
+    websiteTypeValue +
+    technologiesValue +
+    websiteCartValue +
+    websiteReceptionValue;
+
+  renderSum(totalSum);
+}
+
 function getTechnologiesSum(technologiesArr) {
   let totalSum = 0;
 
@@ -64,11 +79,43 @@ function getTechnologiesSum(technologiesArr) {
 
   return totalSum;
 }
-function convertCartOptionToPrice(option) {
-  if (option === 'yes') {
+
+function converCartOptionToPrice(option) {
+  if (option === "yes") {
     return 300;
   }
+
   return 0;
+}
+
+function converReceptionOptionToPrice(option) {
+  if (option === "yes") {
+    return 500;
+  }
+
+  return 0;
+}
+
+function renderSum(sum) {
+  const costElement = document.querySelector(".calculator-form-total-cost");
+
+  costElement.textContent = "Calculating";
+
+  setTimeout(function () {
+    costElement.textContent = "Calculating.";
+  }, 500);
+
+  setTimeout(function () {
+    costElement.textContent = "Calculating..";
+  }, 1000);
+
+  setTimeout(function () {
+    costElement.textContent = "Calculating...";
+  }, 1500);
+
+  setTimeout(function () {
+    costElement.textContent = sum + "$";
+  }, 2000);
 }
 
 function extractPriceFromValue(str) {
